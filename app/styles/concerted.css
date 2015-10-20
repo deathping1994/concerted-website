@@ -1,9 +1,49 @@
-.logo{
-  height: 50px;
-  width: auto;
-  vertical-align: top;
+nav .navbar-brand {
+        padding: 0px;
+    }
+nav .navbar-nav li a {
+        line-height: 50px;
+        height: 50px;
+        padding-top: 0;
+        font-size: 15px;
+        font-weight: normal;
+        color: white;
+        transition: all ease 0.4s;
 }
 
-.navbar-brand {
-        padding: 0;
-  }
+nav .logo{
+  height: 50px;
+  transition: all ease 0.4s;
+}
+
+.view-div{
+  margin-top: 50px;
+}
+
+.footer{
+  border-top: dotted 2px;
+  border-color: grey;
+}
+
+.card{
+  background-color: white;
+  padding: 0px;
+  border-radius: 5px;
+  box-shadow: 5px;
+}
+.card-header{
+  background-color: #5D5B72;
+  color: white;
+  line-height: 30px;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 0px 2px 2px 2px grey;
+}
+.card-block{
+  padding: 10px;
+}
+.spacer{
+  background-image: url(images/spacer.png);
+  padding: 20px;
+}
