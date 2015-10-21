@@ -47,3 +47,9 @@ nav .logo{
   background-image: url(images/spacer.png);
   padding: 20px;
 }
+
+.oneline{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

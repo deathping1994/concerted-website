@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angular-loading-bar'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -33,8 +34,8 @@ angular
       })
       .when('/releases', {
         templateUrl: 'views/releases.html',
-        // controller: 'ReleasesCtrl',
-        // controllerAs: 'releases',
+        controller: 'ReleasesCtrl',
+        controllerAs: 'releases',
         // title: "Concerted|Releases"
       })
       .when('/news', {
