@@ -210,7 +210,10 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>/scripts/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
           '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= yeoman.dist %>/styles/fonts/*'
+          '<%= yeoman.dist %>/styles/fonts/*',
+          '<%= yeoman.dist %>/hooks/*',
+          '<%= yeoman.dist %>/news/{,*/}.{md,json}'
+
         ]
       }
     },
@@ -363,7 +366,8 @@ module.exports = function (grunt) {
             '*.html',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*',
-            'news/*'
+            'news/*',
+            'hooks/*'
           ]
         }, {
           expand: true,
@@ -452,7 +456,7 @@ module.exports = function (grunt) {
     'cdnify',
     'cssmin',
     'uglify',
-    // 'filerev',
+    'filerev',
     'usemin',
     'htmlmin'
   ]);
