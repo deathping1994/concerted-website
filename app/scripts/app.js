@@ -46,8 +46,8 @@ angular
       })
       .when('/contribute', {
         templateUrl: 'views/contribute.html',
-        // controller: 'ContributeCtrl',
-        // controllerAs: 'contribute',
+        controller: 'ContributeCtrl',
+        controllerAs: 'contribute',
         // title: "Concerted|Get Involved"
       })
       .otherwise({
