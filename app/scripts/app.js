@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'angular-loading-bar'
+    'angular-loading-bar',
+    'gsmarkdown'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -40,8 +41,8 @@ angular
       })
       .when('/news', {
         templateUrl: 'views/news.html',
-        // controller: 'NewsCtrl',
-        // controllerAs: 'news',
+        controller: 'NewsCtrl',
+        controllerAs: 'news'
         // title: "Concerted|News"
       })
       .when('/contribute', {
