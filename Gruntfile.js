@@ -211,7 +211,7 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>/styles/{,*/}*.css',
           '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.dist %>/styles/fonts/*',
-          '<%= yeoman.dist %>/hooks/*',
+          '<%= yeoman.dist %>/setup-hooks/*',
           '<%= yeoman.dist %>/news/{,*/}.{md,json}'
 
         ]
@@ -367,7 +367,7 @@ module.exports = function (grunt) {
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*',
             'news/*',
-            'hooks/*'
+            'setup-hooks/*'
           ]
         }, {
           expand: true,
