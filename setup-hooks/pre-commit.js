@@ -52,10 +52,10 @@ for(folder in folders){
      { fs.writeFile('"app/"+folder+"/archive.json"',JSON.stringify(archive),function(err){
       if(err)
         console.log(err);
-      }
+      
 
      });
-  
+    }
    });
 
 };
