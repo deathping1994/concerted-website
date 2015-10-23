@@ -12,7 +12,7 @@ angular.module('concertedWebsiteApp')
     $scope.postlist;
     $scope.archive;
     var loadlist= function(){
-    $http.get("../../news/newslist.json").then(function(res){
+    $http.get("../../news/list.json").then(function(res){
     	$scope.postlist=res.data;
     	$scope.$parent.postlist=res.data;
     });
@@ -36,7 +36,7 @@ angular.module('concertedWebsiteApp')
     $scope.posturl="/markdown-pages/"+$routeParams.name;
     $scope.pages;
     var loadlist= function(){
-    $http.get("../../markdown-pages/archive.json").then(function(res){
+    $http.get("../../markdown-pages/list.json").then(function(res){
         $scope.pages=res.data;
     });
     };

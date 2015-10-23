@@ -13,9 +13,10 @@ Object.deepExtend = function(destination, source) {
   }
   return destination;
 };
-
+var folders=[{url:"news"},{url:"markdown-pages"}];
 for(folder in folders){
-  var url="/app"+folder;
+  console.log(folder);
+  var url="app/"+folders[folder].url;
   fs.readdir(url,function(err, files){
    if (err) {
        return console.error(err);
@@ -25,8 +26,8 @@ for(folder in folders){
    files.forEach(function (file){
     console.log(file)
     if((/\.(md)$/i).test(file)){
-      if (folder=="news" || folder=="blog"){
-        fileobj.url="folder/"+file;
+      if (folders[folder].url=="news" || folders[folder].url=="blog"){
+        fileobj.url=folders[folder].url+"/"+file;
         var res=file.split('-');
         fileobj.year=res[0];
         fileobj.month=res[1];
@@ -34,22 +35,23 @@ for(folder in folders){
         fileobj.title=((res[3].replace(/_/g,' ')).split("."))[0];
       }
       else{
-        fileobj.url="folder/"+file;
-        fileobj.title=((res[3].replace(/_/g,' ')).split("."))[0];
+        fileobj.url=folders[folder].url+"/"+file;
+        fileobj.title=file.split(".")[0];
       }
       var temp={};
     filelist.push(Object.deepExtend(temp,fileobj));
    }
   });
   
-   fs.writeFile('"app/"+folder+"/list.json"',JSON.stringify(filelist),function(err){
+   fs.writeFile("app/"+folders[folder].url+"/list.json",JSON.stringify(filelist),function(err){
     console.log(err);
    });
   var archive=_.groupBy(filelist, function(n) {
   return n.year;
   });
-  if(folder=="news" || folder=="blog")
-     { fs.writeFile('"app/"+folder+"/archive.json"',JSON.stringify(archive),function(err){
+  filelist={};
+  if(folders[folder].url=="news" || folders[folder].url=="blog")
+     { fs.writeFile("app/"+folders[folder].url+"/archive.json",JSON.stringify(archive),function(err){
       if(err)
         console.log(err);
       
