@@ -35,5 +35,8 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
+    "lodash.memoize": "^3.0.4"
   }
 }

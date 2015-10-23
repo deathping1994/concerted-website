@@ -41,14 +41,25 @@ angular
       })
       .when('/news', {
         templateUrl: 'views/news.html',
-        controller: 'NewsCtrl',
-        controllerAs: 'news'
+        controller: 'PostsCtrl',
         // title: "Concerted|News"
       })
       .when('/contribute', {
         templateUrl: 'views/contribute.html',
         controller: 'ContributeCtrl',
         controllerAs: 'contribute',
+        // title: "Concerted|Get Involved"
+      })
+      .when('/news/:year', {
+        templateUrl: 'views/news.html',
+        controller: 'YearlyCtrl'
+        // controllerAs: 'yaer',
+        // title: "Concerted|Get Involved"
+      })
+      .when('/pages/:type/:year/:month/:date/:title', {
+        templateUrl: 'views/post.html',
+        controller: 'OnepostCtrl'
+        // controllerAs: 'yaer',
         // title: "Concerted|Get Involved"
       })
       .otherwise({

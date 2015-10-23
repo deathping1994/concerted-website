@@ -30,7 +30,7 @@ fs.readdir("app/news",function(err, files){
       fileobj.year=res[0];
       fileobj.month=res[1];
       fileobj.date=res[2];
-      fileobj.title=((res[3].replace(/_/g,' ')).split("."))[0];
+      fileobj.title=((res[3].replace('_',' ')).split("."))[0];
       var temp={};
     filelist.push(Object.deepExtend(temp,fileobj));
    }});
