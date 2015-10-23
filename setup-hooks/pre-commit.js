@@ -24,7 +24,7 @@ for(folder in folders){
        var filelist=[];
    files.forEach(function (file){
     console.log(file)
-    if((/\.(md)$/i).test(file){
+    if((/\.(md)$/i).test(file)){
       if (folder=="news" || folder=="blog"){
         fileobj.url="folder/"+file;
         var res=file.split('-');
@@ -53,9 +53,9 @@ for(folder in folders){
       if(err)
         console.log(err);
       }
-      
+
      });
-  });
+  
    });
 
 };
