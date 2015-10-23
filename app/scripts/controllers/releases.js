@@ -9,7 +9,7 @@
  */
 angular.module('concertedWebsiteApp')
   .controller('ReleasesCtrl', function ($scope,$http) {
-    var baseurl="https://api.github.com/repos/apache/incubator-calcite"
+    var baseurl="https://api.github.com/repos/apache/incubator-concerted"
     $scope.curr_page=1;
     $scope.releasedata=[];
     $scope.commitdata=[];

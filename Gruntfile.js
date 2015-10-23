@@ -213,6 +213,7 @@ module.exports = function (grunt) {
           '<%= yeoman.dist %>/styles/fonts/*',
           '<%= yeoman.dist %>/setup-hooks/*',
           '<%= yeoman.dist %>/news/{,*/}.{md,json}',
+          '<%= yeoman.dist %>/markdown-pages/{,*/}.{md,json}',
           '<%= yeoman.dist %>/bower_components/*',
           '<%= yeoman.dist %>/node_modules/*'
 

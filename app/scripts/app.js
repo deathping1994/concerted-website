@@ -62,6 +62,12 @@ angular
         // controllerAs: 'yaer',
         // title: "Concerted|Get Involved"
       })
+      .when('/markdown-pages/:name', {
+        templateUrl: 'views/post.html',
+        controller: 'MarkdownPagesCtrl'
+        // controllerAs: 'yaer',
+        // title: "Concerted|Get Involved"
+      })
       .otherwise({
         redirectTo: '/'
       });

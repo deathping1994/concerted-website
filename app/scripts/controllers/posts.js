@@ -32,6 +32,16 @@ angular.module('concertedWebsiteApp')
     console.log(url);
     $scope.posturl=url;
   })
+  .controller('MarkdownPagesCtrl', function ($scope,$routeParams,$http) {
+    $scope.posturl="/markdown-pages/"+$routeParams.name;
+    $scope.pages;
+    var loadlist= function(){
+    $http.get("../../markdown-pages/archive.json").then(function(res){
+        $scope.pages=res.data;
+    });
+    };
+    loadlist();
+    })
   .controller('YearlyCtrl', function ($scope,$routeParams,$http) {
     	var year=$routeParams.year;
     	$scope.archive={};

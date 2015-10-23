@@ -2,6 +2,7 @@
     <div class="page-header">
         <h1 id="timeline">Release Timeline</h1>
     </div>
+    <h3 class="text-info text-center" ng-if="releasedata.length==0">No releases yet.<br/>Stay Tuned !</h3>
     <ul class="timeline">
         <li ng-repeat="release in releasedata" class="timeline-inverted">
           <div ng-if="$odd" class="timeline-badge info"><i class="glyphicon glyphicon-tags"></i></div>
@@ -13,7 +14,7 @@
             </div>
             <div class="timeline-body">
               <p><a ng-href=release.zipball_url><i class="glyphicon glyphicon-download-alt"></i>Download Zip </a><a ng-href=release.tarball_url><i class="glyphicon glyphicon-download-alt"></i>Download Tarball</a>
-                <a ng-href="https://github.com/apache/incubator-calcite/commits/{{release.commit.sha}}"><i class="glyphicon glyphicon-info-sign"></i>Commit...</a>
+                <a ng-href="https://github.com/apache/incubator-concerted/commits/{{release.commit.sha}}"><i class="glyphicon glyphicon-info-sign"></i>Commit...</a>
               </p>
               <p ng-if="$odd" class="text-warning">
                 <button><i class="glyphicon glyphicon-file"></i>Release Notes</button>
@@ -39,7 +40,7 @@
           </div>
           <div class="timeline-body">
             <p><a ng-href=commit.commiter.html_url><img class="img-circle img-thumbnail" height=50 width=50 ng-src="{{commit.committer.avatar_url}}"> <span ng-bind="commit.commit.committer.name"></span></a>
-              <a ng-href="https://github.com/apache/incubator-calcite/commits/{{commit.sha}}"><i class="glyphicon glyphicon-info-sign"></i>Commit...</a>
+              <a ng-href="https://github.com/apache/incubator-concerted/commits/{{commit.sha}}"><i class="glyphicon glyphicon-info-sign"></i>Commit...</a>
             </p>
 
           </div>
