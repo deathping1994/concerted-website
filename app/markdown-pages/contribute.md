@@ -14,7 +14,7 @@
 
 * Remember to provide *tests* for all submited changes
 * When bugfixing: add test that will isolate bug *before* applying change that fixes it
-* Verify that you follow [Concerted Coding Standards](#/markdown-pages/style_guide.md)
+* Verify that you follow [Concerted Coding Standards](#/markdown-pages/mardown-pages/coding_standards.md)
 
 1. Create a patch from project root directory (e.g. you@dev:~/incubator-concerted $ ):
 
@@ -32,7 +32,7 @@
 
 * Remember to provide *tests* for all submited changes
 * When bugfixing: add test that will isolate bug *before* applying change that fixes it
-* Verify that you follow [Concerted Coding Standards](#/markdown-pages/coding_standards.md)
+* Verify that you follow [Concerted Coding Standards](#/markdown-pages/markdown-pages/coding_standards.md)
 * Verify that your change works on other platforms by adding a GitHub service hook to [Travis CI](http://docs.travis-ci.com/user/getting-started/#Step-one%3A-Sign-in)
 
 1. Commit and push changes to your branch (please use issue name and description as commit title, e.g. CONCERTED-9999 make it perfect)

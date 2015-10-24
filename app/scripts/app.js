@@ -62,11 +62,24 @@ angular
         // controllerAs: 'yaer',
         // title: "Concerted|Get Involved"
       })
-      .when('/markdown-pages/:name', {
-        templateUrl: 'views/post.html',
+      .when('/markdown-pages/:folder/:name', {
+        resolve: {
+        check: ["$route", "$http", "$location", function($route, $http, $location){
+        return $http.get($route.current.params.folder +"/"+$route.current.params.name).success(function(res){
+        return true;
+        }).error(function(res){
+        return $location.path("/404");
+        });
+        }]
+        },
+        templateUrl: 'views/page.html',
         controller: 'MarkdownPagesCtrl'
+
         // controllerAs: 'yaer',
         // title: "Concerted|Get Involved"
+      })
+      .when('/404', {
+        templateUrl: '/404.html'
       })
       .otherwise({
         redirectTo: '/'
