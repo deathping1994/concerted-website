@@ -14,9 +14,23 @@ Object.deepExtend = function(destination, source) {
   return destination;
 };
 
+path = require('path').resolve(process.cwd(), 'app');
+function getDirectories(srcpath) {
+  return fs.readdirSync(srcpath).filter(function(file) {
+    return fs.statSync((path+"/"+file)).isDirectory();
+  });
+}
 
-var folders=[{url:"news"},{url:"markdown-pages"}];
-
+var folders=[];
+dirs=getDirectories(path);
+for(dir in dirs){
+var folderobj={};
+if(dirs[dir][0]!='.'){
+  folderobj.url=dirs[dir];
+    folders.push(folderobj);
+  }
+}
+console.log(folders);
 for(folder in folders){
   console.log("Searching "+folders[folder].url+"...");
   var url="app/"+folders[folder].url;
