@@ -45,16 +45,5 @@
 </div>
 
 <div class="col-md-3">
-<table class="table">
-  <tr ng-repeat="member in members">
-    <td>
-      <p ng-bind="member.name"></p>
-      <p ng-bind="member.role"></p>
-      <p ng-bind="member.apacheid"></p>
-    </td>
-    <td>
-      <img class="img-circle" height="50" width="50" ng-src="https://avatars.githubusercontent.com/{{member.github_handle}}" />
-    </td>
-  </tr>
-</table>
+  <div markdown ng-include="'./markdown-pages/team.md'">
 </div>

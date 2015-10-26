@@ -10,7 +10,7 @@
 angular.module('concertedWebsiteApp')
   .controller('NewsCtrl', function ($scope,$http) {
     $scope.postlist;
-    $http.get("../../news/newslist.json").then(function(res){
+    $http.get("./news/newslist.json").then(function(res){
       $scope.postlist=res.data;
     });
   });

@@ -12,7 +12,7 @@ angular.module('concertedWebsiteApp')
     $scope.posturl=$routeParams.folder+"/"+$routeParams.name;
     $scope.pages;
     var loadlist= function(){
-    $http.get("../../"+$routeParams.folder+"/list.json").then(function(res){
+    $http.get("../"+$routeParams.folder+"/list.json").then(function(res){
         $scope.pages=res.data;
     });
     };

@@ -12,14 +12,14 @@ angular.module('concertedWebsiteApp')
     $scope.postlist;
     $scope.archive;
     var loadlist= function(){
-    $http.get("../../news/list.json").then(function(res){
+    $http.get("../news/list.json").then(function(res){
     	$scope.postlist=res.data;
     	$scope.$parent.postlist=res.data;
     });
 	};
 	loadlist();
 	var loadarchive= function(){
-    $http.get("../../news/archive.json").then(function(res){
+    $http.get("../news/archive.json").then(function(res){
     	$scope.archive=res.data;
     });
 	};
@@ -37,14 +37,14 @@ angular.module('concertedWebsiteApp')
     	$scope.archive={};
     var loadlist= function(){
     	console.log(year);
-    $http.get("../../news/archive.json").then(function(res){
+    $http.get("../news/archive.json").then(function(res){
     	$scope.postlist=res.data[year];
     	console.log($scope.postlist);
     });
 	};
 	loadlist();
 	var loadarchive= function(){
-    $http.get("../../news/archive.json").then(function(res){
+    $http.get("../news/archive.json").then(function(res){
     	$scope.archive[year]=res.data[year];
     	console.log($scope.archive);
     	$scope.$parent.archive=res.data;
