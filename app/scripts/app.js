@@ -27,12 +27,6 @@ angular
         // controllerAs: 'main',
         // title: "Concerted|Home"
       })
-      .when('/docs', {
-        templateUrl: 'views/docs.html',
-        // controller: 'DocsCtrl',
-        // controllerAs: 'docs',
-        // title: "Concerted|Documentation"
-      })
       .when('/releases', {
         templateUrl: 'views/releases.html',
         controller: 'ReleasesCtrl',
@@ -44,15 +38,18 @@ angular
         controller: 'PostsCtrl',
         // title: "Concerted|News"
       })
+      .when('/blog', {
+        templateUrl: 'views/news.html',
+        controller: 'BlogCtrl',
+        // title: "Concerted|News"
+      })
       .when('/contribute', {
         templateUrl: 'views/contribute.html',
-        controller: 'ContributeCtrl',
-        controllerAs: 'contribute',
         // title: "Concerted|Get Involved"
       })
-      .when('/news/:year', {
+      .when('/blog/:year', {
         templateUrl: 'views/news.html',
-        controller: 'YearlyCtrl'
+        controller: 'YearlyBlogCtrl'
         // controllerAs: 'yaer',
         // title: "Concerted|Get Involved"
       })
@@ -77,6 +74,20 @@ angular
 
         // controllerAs: 'yaer',
         // title: "Concerted|Get Involved"
+      })
+      .when('/markdown-pages/:folder/', {
+        resolve: {
+        check: ["$route", "$http", "$location", function($route, $http, $location){
+          console.log($route.current.params.folder+"/list.json");
+        return $http.get($route.current.params.folder+"/list.json").success(function(res){
+        return true;
+        }).error(function(res){
+        return $location.path("/404");
+        });
+        }]
+        },
+        templateUrl: 'views/folderview.html',
+        controller: 'FolderviewCtrl'
       })
       .when('/404', {
         templateUrl: '/404.html'

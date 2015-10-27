@@ -9,7 +9,16 @@
  */
 angular.module('concertedWebsiteApp')
 .controller('MarkdownPagesCtrl', function ($scope,$routeParams,$http) {
-    $scope.posturl=$routeParams.folder+"/"+$routeParams.name;
+    $scope.posturl="../"+$routeParams.folder+"/"+$routeParams.name;
+    $scope.pages;
+    var loadlist= function(){
+    $http.get("../"+$routeParams.folder+"/list.json").then(function(res){
+        $scope.pages=res.data;
+    });
+    };
+    loadlist();
+})
+.controller('FolderviewCtrl', function ($scope,$routeParams,$http) {
     $scope.pages;
     var loadlist= function(){
     $http.get("../"+$routeParams.folder+"/list.json").then(function(res){

@@ -25,6 +25,23 @@ angular.module('concertedWebsiteApp')
 	};
 	loadarchive();
   })
+  .controller('BlogCtrl', function ($scope,$http) {
+    $scope.postlist;
+    $scope.archive;
+    var loadlist= function(){
+    $http.get("../blog/list.json").then(function(res){
+    	$scope.postlist=res.data;
+    	$scope.$parent.postlist=res.data;
+    });
+	};
+	loadlist();
+	var loadarchive= function(){
+    $http.get("../blog/archive.json").then(function(res){
+    	$scope.archive=res.data;
+    });
+	};
+	loadarchive();
+  })
   .controller('OnepostCtrl', function ($scope,$routeParams,$http) {
     var url=$routeParams.type+"/"
     +$routeParams.year+"-"+$routeParams.month+"-"+$routeParams.date+"-"
@@ -51,4 +68,24 @@ angular.module('concertedWebsiteApp')
     });
 	};
 	loadarchive();
+  })
+  .controller('YearlyBlogCtrl', function ($scope,$routeParams,$http) {
+        var year=$routeParams.year;
+        $scope.archive={};
+    var loadlist= function(){
+        console.log(year);
+    $http.get("../blog/archive.json").then(function(res){
+        $scope.postlist=res.data[year];
+        console.log($scope.postlist);
+    });
+    };
+    loadlist();
+    var loadarchive= function(){
+    $http.get("../blog/archive.json").then(function(res){
+        $scope.archive[year]=res.data[year];
+        console.log($scope.archive);
+        $scope.$parent.archive=res.data;
+    });
+    };
+    loadarchive();
   });
