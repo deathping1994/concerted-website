@@ -9,6 +9,6 @@
 </div>
 <div class="col-md-3">
 <ul ng-repeat="(key,value) in archive" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
-<li><a ng-href="#/news/{{key}}">{{key}}</a><br/><ul><li ng-repeat="post in value|orderBy: '+post.month'"><a ng-href="#/pages/news/{{key}}/{{post.month}}/{{post.date}}/{{post.title}}">{{post.title}}</a></li></ul></li>
+<li><a ng-href="#/{{folder}}/{{key}}">{{key}}</a><br/><ul><li ng-repeat="post in value|orderBy: '+post.month'"><a ng-href="#/pages/{{folder}}/{{key}}/{{post.month}}/{{post.date}}/{{post.title}}">{{post.title}}</a></li></ul></li>
 </ul>
 </div>

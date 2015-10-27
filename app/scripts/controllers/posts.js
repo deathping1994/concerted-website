@@ -11,6 +11,7 @@ angular.module('concertedWebsiteApp')
   .controller('PostsCtrl', function ($scope,$http) {
     $scope.postlist;
     $scope.archive;
+    $scope.folder="news";
     var loadlist= function(){
     $http.get("../news/list.json").then(function(res){
     	$scope.postlist=res.data;
@@ -28,6 +29,7 @@ angular.module('concertedWebsiteApp')
   .controller('BlogCtrl', function ($scope,$http) {
     $scope.postlist;
     $scope.archive;
+    $scope.folder="blog";
     var loadlist= function(){
     $http.get("../blog/list.json").then(function(res){
     	$scope.postlist=res.data;
@@ -50,6 +52,7 @@ angular.module('concertedWebsiteApp')
     $scope.posturl=url;
   })
   .controller('YearlyCtrl', function ($scope,$routeParams,$http) {
+    $scope.folder="news";
     	var year=$routeParams.year;
     	$scope.archive={};
     var loadlist= function(){
@@ -70,6 +73,7 @@ angular.module('concertedWebsiteApp')
 	loadarchive();
   })
   .controller('YearlyBlogCtrl', function ($scope,$routeParams,$http) {
+    $scope.folder="blog";
         var year=$routeParams.year;
         $scope.archive={};
     var loadlist= function(){
