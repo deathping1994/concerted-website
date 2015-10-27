@@ -12,12 +12,12 @@ nav .navbar-nav li a {
 }
 
 nav .logo{
-  height: 50px;
+  height: 150px;
   transition: all ease 0.4s;
 }
 
 .view-div{
-  margin-top: 50px;
+  margin-top: 150px;
 }
 
 .footer{
@@ -54,7 +54,7 @@ nav .logo{
   overflow: hidden;
 }
 .jumbotron{
-
+  background-color: white;
 }
 .animate-enter,
 .animate-leave {
@@ -97,4 +97,13 @@ nav .logo{
     transform: scaleY(1);
     height: 30px;
     opacity: 1;
+}
+
+.min nav .logo{
+  height: 50px;
+  transition: all ease 0.4s;
+}
+
+.min .jumbotron{
+  background-color: #A7A599;
 }

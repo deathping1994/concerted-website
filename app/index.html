@@ -24,7 +24,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="header">
+    <div class="header" navscroll ng-class="{min:boolChangeClass}">
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
@@ -65,7 +65,7 @@
     </nav>
     </div>
     <div class="container">
-    <div ng-view="" class="view-div" autoscroll=True></div>
+    <div ng-view="" class="view-div" autoscroll=False></div>
     </div>
 
     <div class="footer">
